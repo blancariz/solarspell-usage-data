@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head>
+      <title>File Log</title>
+   </head>
+   <body>
+      <h3>File Log</h3>
+
+      {%- for message in get_flashed_messages() %}
+         {{ message }}
+      {%- endfor %}
+
+      <h3 style="font-size:15px">
+         <a href = "{{ url_for('show_all_files') }}"></a>
+         <a href = "{{ url_for('upload') }}">Upload a New File|</a>
+         <a href = "{{ url_for('show_plot') }}">View Plot|</a>
+         <a href = "{{ url_for('logout') }}">Logout</a>
+      </h3>
+      
+      <table border="2" padding = "5" style="width:700px">
+         <thead>
+            <tr>
+               <th>File ID</th>
+               <th>File Collection</th>
+               <th>File Name</th>
+            </tr>
+         </thead>        
+         <tbody>
+            {% for new_csv in UserFiles %}
+               <tr>
+                  <td>{{ new_csv.id }}</td>
+                  <td>{{ new_csv.file_collection }}</td>
+                  <td>{{ new_csv.file_name }}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>    
+   </body>
+</html>

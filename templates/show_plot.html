@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>{{ title }}</title>
+
+<link
+    href="https://cdnjs.cloudflare.com/ajax/libs/bokeh/1.2.0/bokeh.min.css"
+    rel="stylesheet" type="text/css">
+<link
+    href="https://cdnjs.cloudflare.com/ajax/libs/bokeh/1.2.0/bokeh-widgets.css"
+    rel="stylesheet" type="text/css">
+<link
+    href="https://cdnjs.cloudflare.com/ajax/libs/bokeh/1.2.0/bokeh-tables.css"
+    rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <h3 style="font-size:15px">
+            <a href = "{{ url_for('show_plot') }}"></a>
+            <a href = "{{ url_for('show_all_files') }}">File Log|</a>
+            <a href = "{{ url_for('upload') }}">Upload a New File|</a>
+            <a href = "{{ url_for('logout') }}">Logout</a>
+         </h3>
+        <h1>Data Plot</h1>
+        {{ div|safe }}
+        {{ script|safe }}
+    </body>
+        <script src="https://cdn.bokeh.org/bokeh/release/bokeh-2.3.1.min.js"></script>
+        <script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.3.1.min.js"></script>
+        <script src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.3.1.min.js"></script>
+</html>

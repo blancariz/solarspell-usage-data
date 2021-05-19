@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Upload Files</title>
+   </head>
+   <body>
+      <h3 style="font-size:15px">
+         <a href = "{{ url_for('show_all_files') }}">File Log|</a>
+         <a href = "{{ url_for('show_plot') }}">View Plot|</a>
+         <a href = "{{ url_for('logout') }}">Logout</a>
+      </h3>
+      <h3>Enter the files collection before uploading the data to the database: </h3>
+     
+         <div class = "alert alert-danger"></div>
+      
+      <form method ="POST" action ="{{ request.path }}" enctype="multipart/form-data">
+         <label for="file_collection">Enter the collection: </label>
+         <input type="text" name="file_collection" id="file_collection" placeholder="Collection" />
+
+	      <input type="file" name="csvfiles" id="file_upload" accept=".csv"/>
+         <button type="submit">Upload</button>
+      </form>
+   </body>
+</html>
